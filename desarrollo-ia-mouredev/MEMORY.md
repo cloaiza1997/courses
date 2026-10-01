@@ -6,6 +6,7 @@ Memoria del proyecto entre sesiones. Máximo ~50 líneas: resume o elimina lo qu
 - Rediseño visual completo: paleta cálida (crema/terracota/verde salvia), tipografía Fraunces + Inter, hero con número protagonista.
 - Constitución creada en `docs/constitution.md` con 6 principios innegociables.
 - Spec 001 (mapa de calor) implementada y verificada.
+- README.md creado en la raíz (cómo usar, estructura, tests, convenciones).
 ## Decisiones (y por qué)
 - Sin backend ni dependencias: cualquiera debe poder abrirlo con doble clic.
 - Fecha editable en el formulario: permite registrar días pasados y ver la racha crecer.
