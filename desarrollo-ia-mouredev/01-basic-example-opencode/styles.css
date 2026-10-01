@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+  line-height: 1.5;
+}
+
+.contenedor {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+/* Racha */
+.racha {
+  text-align: center;
+  background: linear-gradient(135deg, #ff6b35, #f7c59f);
+  color: #fff;
+  border-radius: 16px;
+  padding: 32px 16px;
+  margin-bottom: 24px;
+}
+
+.racha-numero {
+  display: block;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.racha-texto {
+  font-size: 1.1rem;
+}
+
+.mejor-racha {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Formulario */
+.formulario {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #ff6b35;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #ff6b35;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e55a2b;
+}
+
+/* Lista de sesiones */
+.sesiones ul {
+  list-style: none;
+}
+
+.sesion {
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sesion-fecha {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.sesion-tema {
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.sesion-minutos {
+  font-size: 0.9rem;
+  color: #ff6b35;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: 12px;
+}
+
+.vacío {
+  text-align: center;
+  color: #888;
+  font-size: 0.95rem;
+}

@@ -1,0 +1,84 @@
+/* Interfaz del juego: paneles de control de misión y cámaras. Tonos de Marte, letra monoespaciada del sistema. */
+:root {
+  --hud-bg: rgba(24, 12, 7, 0.66);
+  --hud-line: rgba(255, 184, 120, 0.3);
+  --hud-ink: #ffe9d6;
+  --hud-dim: #d9b79c;
+  --hud-accent: #ffb366;
+  --hud-mono: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace;
+}
+.hud { font: 13px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--hud-ink); }
+kbd { font: 600 11px var(--hud-mono); border: 1px solid var(--hud-line); border-bottom-width: 2px; border-radius: 4px; padding: 1px 6px; color: var(--hud-accent); background: rgba(0, 0, 0, 0.25); }
+
+/* ---- Control de misión ---- */
+#mission {
+  position: fixed; top: 14px; right: 14px; width: 340px; max-width: calc(100vw - 28px); max-height: calc(100vh - 28px); overflow-y: auto;
+  background: var(--hud-bg); border: 1px solid var(--hud-line); border-radius: 10px; backdrop-filter: blur(8px);
+  padding: 10px 12px 4px; z-index: 5; transition: transform 0.35s ease, opacity 0.35s ease; scrollbar-width: thin;
+}
+#mission.off { transform: translateX(calc(100% + 24px)); opacity: 0; pointer-events: none; }
+#mission > header { display: flex; justify-content: space-between; align-items: center; font: 700 11px var(--hud-mono); letter-spacing: 0.14em; color: var(--hud-accent); padding-bottom: 8px; border-bottom: 1px solid var(--hud-line); }
+.m-card { padding: 8px 0 8px; border-bottom: 1px solid var(--hud-line); }
+.m-card:last-child { border-bottom: 0; }
+.m-top { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+.m-name { font-weight: 650; }
+.m-prov { font: 10px var(--hud-mono); color: var(--hud-dim); text-align: right; }
+.m-val { display: flex; align-items: baseline; gap: 6px; margin: 2px 0 2px; }
+.m-val b { font: 600 24px/1 var(--hud-mono); font-variant-numeric: tabular-nums; }
+.m-val span { color: var(--hud-accent); font: 600 13px var(--hud-mono); }
+.m-chart { display: block; width: 100%; height: 38px; overflow: visible; cursor: crosshair; touch-action: none; }
+.m-chart .line { fill: none; stroke: var(--hud-accent); stroke-width: 1.6; vector-effect: non-scaling-stroke; }
+.m-chart .area { fill: rgba(255, 179, 102, 0.14); }
+.m-chart .now { fill: #fff3e6; stroke: var(--hud-accent); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.m-chart .cursor { stroke: rgba(255, 233, 214, 0.55); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.m-axis { display: flex; justify-content: space-between; font: 10px var(--hud-mono); color: var(--hud-dim); min-height: 14px; }
+.m-axis .ah { color: var(--hud-ink); }
+.m-phrase { margin: 2px 0 0; color: var(--hud-ink); opacity: 0.92; font-size: 12px; line-height: 1.35; }
+.m-card[data-loaded="error"] .m-val b { color: #ff9a8a; }
+#hint { position: fixed; left: 14px; bottom: 14px; z-index: 5; padding: 7px 12px; border: 1px solid var(--hud-line); background: var(--hud-bg); border-radius: 8px; backdrop-filter: blur(6px); font-size: 12px; }
+
+/* ---- Puntos brillantes de las cámaras ---- */
+.cam-dot { position: fixed; left: 0; top: 0; width: 0; height: 0; padding: 0; border: 0; background: none; z-index: 4; cursor: pointer; }
+.cam-dot i { position: absolute; left: -9px; top: -9px; width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle, #fff 0 22%, rgba(255, 214, 140, 0.95) 38%, rgba(255, 160, 60, 0) 72%); box-shadow: 0 0 14px 4px rgba(255, 190, 90, 0.75); animation: camPulse 1.8s ease-in-out infinite; }
+.cam-dot::before { content: ""; position: absolute; left: -22px; top: -22px; width: 44px; height: 44px; border-radius: 50%; }   /* zona de clic más grande */
+.cam-dot span { position: absolute; left: 14px; top: -34px; white-space: nowrap; font: 600 12px var(--hud-mono); color: var(--hud-ink); background: var(--hud-bg); border: 1px solid var(--hud-line); border-radius: 6px; padding: 3px 8px; opacity: 0; transform: translateY(4px); transition: opacity 0.15s, transform 0.15s; pointer-events: none; }
+.cam-dot:hover span, .cam-dot:focus-visible span { opacity: 1; transform: none; }
+.cam-dot:hover i { animation-duration: 0.7s; }
+.cam-dot:focus-visible { outline: none; }
+.cam-dot:focus-visible i { outline: 2px solid #fff; outline-offset: 3px; }
+@keyframes camPulse { 0%, 100% { transform: scale(0.85); opacity: 0.85; } 50% { transform: scale(1.25); opacity: 1; } }
+
+/* ---- Obturador y visor de fotos ---- */
+#flash { position: fixed; inset: 0; background: #fff; opacity: 0; pointer-events: none; z-index: 30; }
+#flash.go { animation: flash 0.55s ease-out; }
+@keyframes flash { 0% { opacity: 0; } 12% { opacity: 0.95; } 100% { opacity: 0; } }
+#viewer { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; align-content: center; gap: 12px; background: rgba(8, 4, 2, 0.6); backdrop-filter: blur(3px); font: 13px/1.4 system-ui, sans-serif; color: var(--hud-ink); }
+#viewer[hidden] { display: none; }
+.v-card { margin: 0; width: min(88vw, 1000px); animation: cardIn 0.4s ease-out; }
+@keyframes cardIn { from { transform: scale(0.94); opacity: 0; } }
+.v-frame { position: relative; overflow: hidden; border: 1px solid var(--hud-line); border-radius: 8px; background: #120a06; cursor: zoom-in; box-shadow: 0 18px 60px rgba(0, 0, 0, 0.6); aspect-ratio: 4 / 3; max-height: 72vh; margin-inline: auto; }
+.v-frame img { width: 100%; height: 100%; object-fit: contain; display: block; clip-path: inset(0 0 100% 0); }
+.v-frame.reveal img { animation: scanIn 2.4s linear forwards, develop 3.6s ease-out forwards; }
+.v-scan { position: absolute; left: 0; right: 0; top: 0; height: 3px; background: linear-gradient(90deg, transparent, #ffd9a8, transparent); box-shadow: 0 0 14px 3px rgba(255, 190, 110, 0.8); opacity: 0; }
+.v-frame.reveal .v-scan { animation: scanBar 2.4s linear forwards; }
+@keyframes scanIn { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes develop { from { filter: blur(16px) brightness(0.4) saturate(0.15); } to { filter: none; } }
+@keyframes scanBar { 0% { top: 0; opacity: 1; } 96% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+.v-card figcaption { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; padding: 10px 2px 0; }
+.v-cam { font: 700 15px var(--hud-mono); color: var(--hud-accent); }
+.v-meta { font: 14px var(--hud-mono); }
+.v-count { margin-left: auto; font: 12px var(--hud-mono); color: var(--hud-dim); }
+.v-help { font-size: 12px; color: var(--hud-dim); }
+#viewer.zoom { background: rgba(0, 0, 0, 0.94); }
+#viewer.zoom .v-card { width: 100vw; }
+#viewer.zoom .v-frame { aspect-ratio: auto; max-height: none; height: calc(100vh - 86px); border-radius: 0; border: 0; cursor: zoom-out; }
+body.viewing #mission { opacity: 0.35; }
+
+@media (max-width: 720px) {
+  #mission { width: 290px; top: 8px; right: 8px; }
+  #hint { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cam-dot i { animation: none; }
+  .v-frame.reveal img { animation-duration: 0.4s, 0.4s; }
+}

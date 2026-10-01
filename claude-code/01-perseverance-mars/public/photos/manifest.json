@@ -1,0 +1,150 @@
+{
+ "mastcam": [
+  {
+   "file": "photos/mastcam/1.jpg",
+   "id": "ZR0_1990_0843603826_318EBY_N0910970ZCAM10024_1100LMJ",
+   "instrument": "MCZ_RIGHT",
+   "sol": 1990,
+   "utc": "2026-09-25T10:48:50.586"
+  },
+  {
+   "file": "photos/mastcam/2.jpg",
+   "id": "ZR0_1990_0843604567_318EBY_N0910970ZCAM10024_1100LMJ",
+   "instrument": "MCZ_RIGHT",
+   "sol": 1990,
+   "utc": "2026-09-25T11:01:13.592"
+  },
+  {
+   "file": "photos/mastcam/3.jpg",
+   "id": "ZR0_1990_0843603531_160EBY_N0910970ZCAM10026_1100LMJ",
+   "instrument": "MCZ_RIGHT",
+   "sol": 1990,
+   "utc": "2026-09-25T10:44:35.581"
+  },
+  {
+   "file": "photos/mastcam/4.jpg",
+   "id": "ZL0_1989_0843521762_727EBY_N0910970ZCAM05065_0480LMJ",
+   "instrument": "MCZ_LEFT",
+   "sol": 1989,
+   "utc": "2026-09-24T12:02:41.928"
+  },
+  {
+   "file": "photos/mastcam/5.jpg",
+   "id": "ZR0_1990_0843604302_303EBY_N0910970ZCAM10024_1100LMJ",
+   "instrument": "MCZ_RIGHT",
+   "sol": 1990,
+   "utc": "2026-09-25T10:56:57.586"
+  }
+ ],
+ "navcam": [
+  {
+   "file": "photos/navcam/1.jpg",
+   "id": "NLF_1994_0843971466_880ECM_N0910970NCAM00347_01_195J",
+   "instrument": "NAVCAM_LEFT",
+   "sol": 1994,
+   "utc": "2026-09-29T16:56:03.139"
+  },
+  {
+   "file": "photos/navcam/2.jpg",
+   "id": "NLF_1994_0843972077_551ECM_N0910970NCAM00709_01_095J",
+   "instrument": "NAVCAM_LEFT",
+   "sol": 1994,
+   "utc": "2026-09-29T17:06:13.353"
+  },
+  {
+   "file": "photos/navcam/3.jpg",
+   "id": "NLF_1989_0843521325_527ECM_N0910970NCAM00709_08_095J",
+   "instrument": "NAVCAM_LEFT",
+   "sol": 1989,
+   "utc": "2026-09-24T11:53:37.829"
+  },
+  {
+   "file": "photos/navcam/4.jpg",
+   "id": "NLF_1989_0843521325_527ECM_N0910970NCAM00709_03_095J",
+   "instrument": "NAVCAM_LEFT",
+   "sol": 1989,
+   "utc": "2026-09-24T11:53:37.829"
+  },
+  {
+   "file": "photos/navcam/5.jpg",
+   "id": "NRF_1994_0843972077_551ECM_N0910970NCAM00709_01_095J",
+   "instrument": "NAVCAM_RIGHT",
+   "sol": 1994,
+   "utc": "2026-09-29T17:06:13.333"
+  }
+ ],
+ "hazcam": [
+  {
+   "file": "photos/hazcam/1.jpg",
+   "id": "FLF_1994_0843973092_505ECM_N0910970FHAZ00206_01_295J",
+   "instrument": "FRONT_HAZCAM_LEFT_A",
+   "sol": 1994,
+   "utc": "2026-09-29T17:23:09.350"
+  },
+  {
+   "file": "photos/hazcam/2.jpg",
+   "id": "FRF_1994_0843970910_114ECM_N0910970FHAZ00203_04_195J",
+   "instrument": "FRONT_HAZCAM_RIGHT_A",
+   "sol": 1994,
+   "utc": "2026-09-29T16:46:46.461"
+  },
+  {
+   "file": "photos/hazcam/3.jpg",
+   "id": "FRF_1994_0843970910_114ECM_N0910970FHAZ00203_13_195J",
+   "instrument": "FRONT_HAZCAM_RIGHT_A",
+   "sol": 1994,
+   "utc": "2026-09-29T16:46:46.461"
+  },
+  {
+   "file": "photos/hazcam/4.jpg",
+   "id": "FLF_1992_0843779187_819ECM_N0910970FHAZ00215_04_075J",
+   "instrument": "FRONT_HAZCAM_LEFT_A",
+   "sol": 1992,
+   "utc": "2026-09-27T11:31:22.427"
+  },
+  {
+   "file": "photos/hazcam/5.jpg",
+   "id": "FLF_1989_0843521162_784ECM_N0910970FHAZ00203_07_195J",
+   "instrument": "FRONT_HAZCAM_LEFT_A",
+   "sol": 1989,
+   "utc": "2026-09-24T11:50:55.273"
+  }
+ ],
+ "watson": [
+  {
+   "file": "photos/watson/1.jpg",
+   "id": "SIF_1991_0843706156_199EBY_N0910970SRLC00345_0000LMJ",
+   "instrument": "SHERLOC_WATSON",
+   "sol": 1991,
+   "utc": "2026-09-26T15:14:33.390"
+  },
+  {
+   "file": "photos/watson/2.jpg",
+   "id": "SIF_1994_0843972835_714EBY_N0910970SRLC00630_0000LMJ",
+   "instrument": "SHERLOC_WATSON",
+   "sol": 1994,
+   "utc": "2026-09-29T17:18:54.510"
+  },
+  {
+   "file": "photos/watson/3.jpg",
+   "id": "SIF_1991_0843720999_949EBY_N0910970SRLC08060_0000LMJ",
+   "instrument": "SHERLOC_WATSON",
+   "sol": 1991,
+   "utc": "2026-09-26T19:21:34.512"
+  },
+  {
+   "file": "photos/watson/4.jpg",
+   "id": "SIF_1991_0843705740_410EBY_N0910970SRLC00633_0000LMJ",
+   "instrument": "SHERLOC_WATSON",
+   "sol": 1991,
+   "utc": "2026-09-26T15:07:13.390"
+  },
+  {
+   "file": "photos/watson/5.jpg",
+   "id": "SIF_1989_0843523287_765EBY_N0910970SRLC04004_0000LMJ",
+   "instrument": "SHERLOC_WATSON",
+   "sol": 1989,
+   "utc": "2026-09-24T12:26:22.938"
+  }
+ ]
+}
